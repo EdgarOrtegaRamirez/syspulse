@@ -1,0 +1,26 @@
+# Binaries
+syspulse
+*.exe
+
+# Test binaries
+*.test
+
+# Build artifacts
+*.tar.gz
+
+# Go build cache
+/pkg/
+/bin/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test coverage
+*.out
+coverage.txt
+
+# Temporary files
+/tmp/*
