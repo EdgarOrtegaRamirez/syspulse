@@ -2,8 +2,8 @@
 package sysinfo
 
 import (
-	"os"
 	"bufio"
+	"os"
 	"strconv"
 	"strings"
 	"syscall"

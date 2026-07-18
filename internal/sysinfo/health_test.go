@@ -8,7 +8,7 @@ import (
 
 func TestCheckHealth_NoThresholds(t *testing.T) {
 	info := &Info{
-		CPU: CPUInfo{UsagePercent: 50},
+		CPU:    CPUInfo{UsagePercent: 50},
 		Memory: MemoryInfo{UsagePercent: 50},
 		Disks: []DiskInfo{
 			{Mount: "/", UsagePercent: 50},
@@ -54,9 +54,9 @@ func TestCheckHealth_DiskExceeded(t *testing.T) {
 
 func TestCheckHealth_MultipleWarnings(t *testing.T) {
 	info := &Info{
-		CPU:      CPUInfo{UsagePercent: 95},
-		Memory:   MemoryInfo{UsagePercent: 95},
-		Disks:    []DiskInfo{{Mount: "/", UsagePercent: 95}},
+		CPU:    CPUInfo{UsagePercent: 95},
+		Memory: MemoryInfo{UsagePercent: 95},
+		Disks:  []DiskInfo{{Mount: "/", UsagePercent: 95}},
 	}
 	health := CheckHealth(info, &alerts.Config{CPU: 80, Memory: 80, Disk: 80})
 	if len(health) != 3 {

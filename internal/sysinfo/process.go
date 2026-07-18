@@ -4,9 +4,9 @@ package sysinfo
 import (
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
-	"sort"
 
 	"github.com/EdgarOrtegaRamirez/syspulse/internal/osutil"
 )

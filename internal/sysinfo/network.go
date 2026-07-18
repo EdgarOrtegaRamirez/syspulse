@@ -2,8 +2,8 @@
 package sysinfo
 
 import (
-	"strings"
 	"strconv"
+	"strings"
 
 	"github.com/EdgarOrtegaRamirez/syspulse/internal/osutil"
 )
@@ -44,14 +44,22 @@ func collectNetwork(info *Info) error {
 		for i, v := range fields[1:] {
 			val, _ := strconv.ParseUint(v, 10, 64)
 			switch i {
-			case 0: net.BytesRecv = val
-			case 1: net.PacketsRecv = val
-			case 2: net.ErrorsRecv = val
-			case 3: net.DropsRecv = val
-			case 8: net.BytesSent = val
-			case 9: net.PacketsSent = val
-			case 10: net.ErrorsSent = val
-			case 11: net.DropsSent = val
+			case 0:
+				net.BytesRecv = val
+			case 1:
+				net.PacketsRecv = val
+			case 2:
+				net.ErrorsRecv = val
+			case 3:
+				net.DropsRecv = val
+			case 8:
+				net.BytesSent = val
+			case 9:
+				net.PacketsSent = val
+			case 10:
+				net.ErrorsSent = val
+			case 11:
+				net.DropsSent = val
 			}
 		}
 

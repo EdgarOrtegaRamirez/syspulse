@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/EdgarOrtegaRamirez/syspulse/internal/sysinfo"
 	"github.com/EdgarOrtegaRamirez/syspulse/internal/alerts"
 	"github.com/EdgarOrtegaRamirez/syspulse/internal/history"
+	"github.com/EdgarOrtegaRamirez/syspulse/internal/sysinfo"
 )
 
 // Execute runs the CLI entry point.
@@ -280,11 +280,11 @@ func cmdReport() error {
 	health := sysinfo.CheckHealth(info, nil)
 
 	report := map[string]interface{}{
-		"timestamp":  info.Timestamp,
-		"hostname":   info.Hostname,
-		"platform":   info.Platform,
-		"kernel":     info.Kernel,
-		"uptime":     info.Uptime,
+		"timestamp": info.Timestamp,
+		"hostname":  info.Hostname,
+		"platform":  info.Platform,
+		"kernel":    info.Kernel,
+		"uptime":    info.Uptime,
 		"cpu": map[string]interface{}{
 			"usage_percent":  info.CPU.UsagePercent,
 			"model":          info.CPU.Model,
@@ -326,10 +326,10 @@ func cmdReport() error {
 
 	for i, n := range info.Networks {
 		report["network"].([]map[string]interface{})[i] = map[string]interface{}{
-			"name":      n.Name,
-			"ip":        n.IP,
-			"bytes_sent":  formatBytes(n.BytesSent),
-			"bytes_recv":  formatBytes(n.BytesRecv),
+			"name":       n.Name,
+			"ip":         n.IP,
+			"bytes_sent": formatBytes(n.BytesSent),
+			"bytes_recv": formatBytes(n.BytesRecv),
 		}
 	}
 
@@ -351,10 +351,10 @@ func cmdAlerts() error {
 	}
 
 	health := sysinfo.CheckHealth(info, &alerts.Config{
-		CPU:         thresholds["cpu"],
-		Memory:      thresholds["memory"],
-		Disk:        thresholds["disk"],
-		Load:        float64(thresholds["load"]),
+		CPU:           thresholds["cpu"],
+		Memory:        thresholds["memory"],
+		Disk:          thresholds["disk"],
+		Load:          float64(thresholds["load"]),
 		ProcessZombie: thresholds["zombie"],
 	})
 

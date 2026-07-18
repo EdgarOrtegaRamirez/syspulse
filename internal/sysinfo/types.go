@@ -14,16 +14,16 @@ import (
 
 // Info contains a snapshot of system resource information.
 type Info struct {
-	Timestamp time.Time `json:"timestamp"`
-	Hostname  string    `json:"hostname"`
-	Platform  string    `json:"platform"`
-	Version   string    `json:"version"`
-	Kernel    string    `json:"kernel"`
-	Uptime    string    `json:"uptime"`
-	CPU       CPUInfo   `json:"cpu"`
-	Memory    MemoryInfo `json:"memory"`
-	Disks     []DiskInfo `json:"disks"`
-	Networks  []NetInfo  `json:"networks"`
+	Timestamp time.Time   `json:"timestamp"`
+	Hostname  string      `json:"hostname"`
+	Platform  string      `json:"platform"`
+	Version   string      `json:"version"`
+	Kernel    string      `json:"kernel"`
+	Uptime    string      `json:"uptime"`
+	CPU       CPUInfo     `json:"cpu"`
+	Memory    MemoryInfo  `json:"memory"`
+	Disks     []DiskInfo  `json:"disks"`
+	Networks  []NetInfo   `json:"networks"`
 	Processes ProcessInfo `json:"processes"`
 }
 
@@ -53,16 +53,16 @@ type CpuProc struct {
 
 // MemoryInfo holds memory-related information.
 type MemoryInfo struct {
-	Total      uint64  `json:"total_bytes"`
-	Used       uint64  `json:"used_bytes"`
-	Free       uint64  `json:"free_bytes"`
-	Available  uint64  `json:"available_bytes"`
-	Cached     uint64  `json:"cached_bytes"`
-	Buffers    uint64  `json:"buffers_bytes"`
-	UsagePercent float64 `json:"usage_percent"`
-	SwapTotal  uint64  `json:"swap_total_bytes"`
-	SwapUsed   uint64  `json:"swap_used_bytes"`
-	SwapPercent float64 `json:"swap_percent"`
+	Total        uint64     `json:"total_bytes"`
+	Used         uint64     `json:"used_bytes"`
+	Free         uint64     `json:"free_bytes"`
+	Available    uint64     `json:"available_bytes"`
+	Cached       uint64     `json:"cached_bytes"`
+	Buffers      uint64     `json:"buffers_bytes"`
+	UsagePercent float64    `json:"usage_percent"`
+	SwapTotal    uint64     `json:"swap_total_bytes"`
+	SwapUsed     uint64     `json:"swap_used_bytes"`
+	SwapPercent  float64    `json:"swap_percent"`
 	TopProcesses []SwapProc `json:"top_swap_processes,omitempty"`
 }
 
@@ -74,43 +74,43 @@ type SwapProc struct {
 
 // DiskInfo holds disk partition information.
 type DiskInfo struct {
-	Mount      string  `json:"mount"`
-	Device     string  `json:"device"`
-	Filesystem string  `json:"filesystem"`
-	Type       string  `json:"type"`
-	Driver     string  `json:"driver"`
-	Total      uint64  `json:"total_bytes"`
-	Used       uint64  `json:"used_bytes"`
-	Free       uint64  `json:"free_bytes"`
+	Mount        string  `json:"mount"`
+	Device       string  `json:"device"`
+	Filesystem   string  `json:"filesystem"`
+	Type         string  `json:"type"`
+	Driver       string  `json:"driver"`
+	Total        uint64  `json:"total_bytes"`
+	Used         uint64  `json:"used_bytes"`
+	Free         uint64  `json:"free_bytes"`
 	UsagePercent float64 `json:"usage_percent"`
-	IORead     uint64  `json:"io_read_bytes_per_sec"`
-	IOWrite    uint64  `json:"io_write_bytes_per_sec"`
+	IORead       uint64  `json:"io_read_bytes_per_sec"`
+	IOWrite      uint64  `json:"io_write_bytes_per_sec"`
 }
 
 // NetInfo holds network interface information.
 type NetInfo struct {
-	Name      string `json:"name"`
-	IP        string `json:"ip"`
-	MAC       string `json:"mac"`
-	State     string `json:"state"`
-	Speed     string `json:"speed"`
-	BytesSent uint64 `json:"bytes_sent"`
-	BytesRecv uint64 `json:"bytes_recv"`
-	PacketsSent  uint64 `json:"packets_sent"`
-	PacketsRecv  uint64 `json:"packets_recv"`
-	ErrorsSent   uint64 `json:"errors_sent"`
-	ErrorsRecv   uint64 `json:"errors_recv"`
-	DropsSent    uint64 `json:"drops_sent"`
-	DropsRecv    uint64 `json:"drops_recv"`
+	Name        string `json:"name"`
+	IP          string `json:"ip"`
+	MAC         string `json:"mac"`
+	State       string `json:"state"`
+	Speed       string `json:"speed"`
+	BytesSent   uint64 `json:"bytes_sent"`
+	BytesRecv   uint64 `json:"bytes_recv"`
+	PacketsSent uint64 `json:"packets_sent"`
+	PacketsRecv uint64 `json:"packets_recv"`
+	ErrorsSent  uint64 `json:"errors_sent"`
+	ErrorsRecv  uint64 `json:"errors_recv"`
+	DropsSent   uint64 `json:"drops_sent"`
+	DropsRecv   uint64 `json:"drops_recv"`
 }
 
 // ProcessInfo holds process statistics.
 type ProcessInfo struct {
-	Total       int      `json:"total"`
-	Running     int      `json:"running"`
-	Sleeping    int      `json:"sleeping"`
-	TopCPU      []CpuProc `json:"top_cpu"`
-	TopMemory   []CpuProc `json:"top_memory"`
+	Total     int       `json:"total"`
+	Running   int       `json:"running"`
+	Sleeping  int       `json:"sleeping"`
+	TopCPU    []CpuProc `json:"top_cpu"`
+	TopMemory []CpuProc `json:"top_memory"`
 }
 
 // New creates a new Info snapshot of the current system state.
