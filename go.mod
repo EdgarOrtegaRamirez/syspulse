@@ -1,3 +1,3 @@
 module github.com/EdgarOrtegaRamirez/syspulse
 
-go 1.24
+go 1.25
